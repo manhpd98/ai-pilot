@@ -1,6 +1,6 @@
 # Example: Add a Feature
 
-A complete walkthrough of using AI Pilot to add dark mode support, with actual prompts, code diffs, and multi-task delegation.
+A complete walkthrough of using Multi-Agent Coding to add dark mode support, with actual prompts, code diffs, and multi-task delegation.
 
 ## Scenario
 

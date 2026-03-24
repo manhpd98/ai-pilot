@@ -1,6 +1,6 @@
 # Flutter / Dart Configuration
 
-Platform-specific settings for AI Pilot when working with Flutter projects.
+Platform-specific settings for Multi-Agent Coding when working with Flutter projects.
 
 ## Build & Test Commands
 

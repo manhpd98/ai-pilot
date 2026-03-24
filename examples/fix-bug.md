@@ -1,6 +1,6 @@
 # Example: Fix a Bug
 
-A complete walkthrough of using AI Pilot to fix a crash bug, with actual prompts, code diffs, and terminal output.
+A complete walkthrough of using Multi-Agent Coding to fix a crash bug, with actual prompts, code diffs, and terminal output.
 
 ## Scenario
 

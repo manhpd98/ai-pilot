@@ -1,12 +1,12 @@
-# Contributing to AI Pilot
+# Contributing to Multi-Agent Coding
 
-Thank you for considering contributing to AI Pilot! This project is community-driven and we welcome contributions of all kinds.
+Thank you for considering contributing to Multi-Agent Coding! This project is community-driven and we welcome contributions of all kinds.
 
 ## How to Contribute
 
 ### 1. Report Issues
 
-Found a bug or have a feature request? [Open an issue](https://github.com/manhpd98/ai-pilot/issues/new/choose) using one of our templates.
+Found a bug or have a feature request? [Open an issue](https://github.com/manhpd98/multi-agent-coding/issues/new/choose) using one of our templates.
 
 ### 2. Submit a Pull Request
 
@@ -70,7 +70,7 @@ chore: update CLI version number
 
 ## Testing Your Changes
 
-Since AI Pilot is primarily markdown + shell scripts:
+Since Multi-Agent Coding is primarily markdown + shell scripts:
 
 1. **Shell scripts**: Test `install.sh` and `bin/ai-pilot` in a clean directory
    ```bash
@@ -92,4 +92,4 @@ Since AI Pilot is primarily markdown + shell scripts:
 
 ## Questions?
 
-Open a [Discussion](https://github.com/manhpd98/ai-pilot/discussions) or reach out via Issues.
+Open a [Discussion](https://github.com/manhpd98/multi-agent-coding/discussions) or reach out via Issues.

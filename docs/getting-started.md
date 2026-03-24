@@ -1,6 +1,6 @@
 # Getting Started
 
-Complete guide to setting up and using AI Pilot.
+Complete guide to setting up and using Multi-Agent Coding.
 
 ## Prerequisites
 
@@ -20,20 +20,20 @@ Complete guide to setting up and using AI Pilot.
 
 ```bash
 # Install into current directory
-curl -fsSL https://raw.githubusercontent.com/manhpd98/ai-pilot/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/manhpd98/multi-agent-coding/main/install.sh | bash
 
 # Install into a specific project
-curl -fsSL https://raw.githubusercontent.com/manhpd98/ai-pilot/main/install.sh | bash -s -- /path/to/project
+curl -fsSL https://raw.githubusercontent.com/manhpd98/multi-agent-coding/main/install.sh | bash -s -- /path/to/project
 ```
 
 ### Method 2: CLI Tool
 
 ```bash
 # Clone the repo
-git clone https://github.com/manhpd98/ai-pilot.git
+git clone https://github.com/manhpd98/multi-agent-coding.git
 
 # Add to PATH
-export PATH="$PATH:$(pwd)/ai-pilot/bin"
+export PATH="$PATH:$(pwd)/multi-agent-coding/bin"
 # (Add to ~/.zshrc or ~/.bashrc to make permanent)
 
 # Initialize in any project
@@ -44,8 +44,8 @@ ai-pilot init
 ### Method 3: Manual Copy
 
 ```bash
-git clone https://github.com/manhpd98/ai-pilot.git
-cp -r ai-pilot/.agent /path/to/your/project/
+git clone https://github.com/manhpd98/multi-agent-coding.git
+cp -r multi-agent-coding/.agent /path/to/your/project/
 ```
 
 ## Install an AI Worker

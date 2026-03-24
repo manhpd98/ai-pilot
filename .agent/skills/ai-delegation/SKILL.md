@@ -1,9 +1,9 @@
 ---
-name: AI Pilot — Multi-Agent Delegation
+name: Multi-Agent Coding — Delegation
 description: Use any AI assistant as project manager (Pilot) to plan, review, and verify code while delegating actual coding to Claude Code, OpenCode, Aider, or other AI coding agents via terminal.
 ---
 
-# AI Pilot — Delegation Skill
+# Multi-Agent Coding — Delegation Skill
 
 > **One AI thinks. Another acts.** Like pairing a Tech Lead with a Senior Developer.
 

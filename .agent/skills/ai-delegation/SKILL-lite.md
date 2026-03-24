@@ -1,9 +1,9 @@
 ---
-name: AI Pilot — Smart Delegation
+name: Multi-Agent Coding — Smart Delegation
 description: Delegate coding tasks to Claude Code or other AI workers. ONLY activates when user explicitly says use claude, dùng claude, used claude, delegate, hoặc khi user đồng ý sau khi được hỏi. NEVER auto-delegate without user consent.
 ---
 
-# AI Pilot — Delegation Protocol
+# Multi-Agent Coding — Delegation Protocol
 
 ## When to Activate
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# ai-pilot — CLI for Multi-Agent Coding Workflow
+# ai-pilot — CLI for Multi-Agent Coding
 #
 # Usage:
 #   ai-pilot init                          Copy .agent/ into current project
@@ -16,7 +16,7 @@
 
 set -euo pipefail
 
-VERSION="1.1.0"
+VERSION="2.0.0"
 
 # ─────────────────────────────────────────────
 # Colors
@@ -67,7 +67,7 @@ log_session() {
 
 cmd_help() {
     echo ""
-    echo -e "${CYAN}${BOLD}🤖 AI Pilot${NC} v$VERSION — Multi-Agent Coding Workflow"
+    echo -e "${CYAN}${BOLD}🤖 Multi-Agent Coding${NC} v$VERSION — Multi-Agent Coding Workflow"
     echo ""
     echo -e "${BOLD}USAGE${NC}"
     echo -e "  ai-pilot <command> [options]"
@@ -90,7 +90,7 @@ cmd_help() {
     echo -e "  ${CYAN}aider${NC}      Aider (aider --message \"...\")"
     echo ""
     echo -e "${BOLD}EXAMPLES${NC}"
-    echo -e "  ${DIM}# Install AI Pilot into your project${NC}"
+    echo -e "  ${DIM}# Install Multi-Agent Coding into your project${NC}"
     echo -e "  ai-pilot init"
     echo ""
     echo -e "  ${DIM}# Delegate a bug fix to Claude Code${NC}"
@@ -132,7 +132,7 @@ cmd_init() {
         info "Downloading from GitHub..."
         TEMP_DIR=$(mktemp -d)
         trap 'rm -rf "$TEMP_DIR"' EXIT
-        git clone --quiet --depth 1 https://github.com/manhpd98/ai-pilot.git "$TEMP_DIR/ai-pilot" 2>/dev/null
+        git clone --quiet --depth 1 https://github.com/manhpd98/multi-agent-coding.git "$TEMP_DIR/ai-pilot" 2>/dev/null
         cp -r "$TEMP_DIR/ai-pilot/.agent" ".agent"
         success "Installed .agent/ into $(pwd)"
     fi
@@ -144,7 +144,7 @@ cmd_init() {
 
 cmd_status() {
     echo ""
-    echo -e "${BOLD}🤖 AI Pilot Status${NC}"
+    echo -e "${BOLD}🤖 Multi-Agent Coding Status${NC}"
     echo ""
     
     # Check .agent
@@ -258,7 +258,7 @@ constraints:
 YAML
 
     echo ""
-    echo -e "${BOLD}🤖 AI Pilot — Task Protocol${NC}"
+    echo -e "${BOLD}🤖 Multi-Agent Coding — Task Protocol${NC}"
     echo -e "  Task ID: ${CYAN}$task_id${NC}"
     echo -e "  Type:    $task_type"
     echo -e "  Worker:  ${CYAN}$worker${NC}"
@@ -378,7 +378,7 @@ cmd_delegate() {
     fi
     
     echo ""
-    echo -e "${BOLD}🤖 AI Pilot — Delegating Task${NC}"
+    echo -e "${BOLD}🤖 Multi-Agent Coding — Delegating Task${NC}"
     echo -e "  Worker: ${CYAN}$worker${NC}"
     echo -e "  Task:   $task"
     echo ""
@@ -593,7 +593,7 @@ cmd_update() {
     temp_dir=$(mktemp -d)
     trap 'rm -rf "$temp_dir"' EXIT
 
-    if ! git clone --quiet --depth 1 https://github.com/manhpd98/ai-pilot.git "$temp_dir/ai-pilot" 2>/dev/null; then
+    if ! git clone --quiet --depth 1 https://github.com/manhpd98/multi-agent-coding.git "$temp_dir/ai-pilot" 2>/dev/null; then
         error "Failed to clone from GitHub."
         exit 1
     fi
@@ -624,7 +624,7 @@ cmd_update() {
 
 cmd_uninstall() {
     echo ""
-    echo -e "${BOLD}🗑  AI Pilot — Uninstall${NC}"
+    echo -e "${BOLD}🗑  Multi-Agent Coding — Uninstall${NC}"
     echo ""
 
     if [ ! -d ".agent" ] && [ ! -d "$LOG_DIR" ]; then

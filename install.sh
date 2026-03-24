@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
-# AI Pilot — One-line installer
-# Usage: curl -fsSL https://raw.githubusercontent.com/manhpd98/ai-pilot/main/install.sh | bash
+# Multi-Agent Coding — One-line installer
+# Usage: curl -fsSL https://raw.githubusercontent.com/manhpd98/multi-agent-coding/main/install.sh | bash
 #
 # Or with a target directory:
 #   curl -fsSL ... | bash -s -- /path/to/your/project
@@ -29,7 +29,7 @@ error()   { echo -e "${RED}❌${NC} $1"; }
 # ─────────────────────────────────────────────
 echo ""
 echo -e "${CYAN}${BOLD}╔══════════════════════════════════════╗${NC}"
-echo -e "${CYAN}${BOLD}║          🤖 AI Pilot Installer       ║${NC}"
+echo -e "${CYAN}${BOLD}║          🤖 Multi-Agent Coding Installer       ║${NC}"
 echo -e "${CYAN}${BOLD}║    Multi-Agent Coding Workflow        ║${NC}"
 echo -e "${CYAN}${BOLD}╚══════════════════════════════════════╝${NC}"
 echo ""
@@ -59,18 +59,18 @@ if [ -d "$TARGET_DIR/.agent" ]; then
 fi
 
 # ─────────────────────────────────────────────
-# Download AI Pilot
+# Download Multi-Agent Coding
 # ─────────────────────────────────────────────
-info "Downloading AI Pilot..."
+info "Downloading Multi-Agent Coding..."
 
 TEMP_DIR=$(mktemp -d)
 trap 'rm -rf "$TEMP_DIR"' EXIT
 
 if command -v git &>/dev/null; then
-    git clone --quiet --depth 1 https://github.com/manhpd98/ai-pilot.git "$TEMP_DIR/ai-pilot" 2>/dev/null
+    git clone --quiet --depth 1 https://github.com/manhpd98/multi-agent-coding.git "$TEMP_DIR/ai-pilot" 2>/dev/null
 elif command -v curl &>/dev/null; then
-    curl -fsSL https://github.com/manhpd98/ai-pilot/archive/main.tar.gz | tar xz -C "$TEMP_DIR"
-    mv "$TEMP_DIR/ai-pilot-main" "$TEMP_DIR/ai-pilot"
+    curl -fsSL https://github.com/manhpd98/multi-agent-coding/archive/main.tar.gz | tar xz -C "$TEMP_DIR"
+    mv "$TEMP_DIR/multi-agent-coding-main" "$TEMP_DIR/multi-agent-coding"
 else
     error "Neither git nor curl found. Please install one of them."
     exit 1
@@ -79,7 +79,7 @@ fi
 # ─────────────────────────────────────────────
 # Copy .agent to project
 # ─────────────────────────────────────────────
-cp -r "$TEMP_DIR/ai-pilot/.agent" "$TARGET_DIR/.agent"
+cp -r "$TEMP_DIR/multi-agent-coding/.agent" "$TARGET_DIR/.agent"
 success "Installed .agent/ to $TARGET_DIR"
 
 # ─────────────────────────────────────────────
@@ -89,9 +89,9 @@ echo ""
 read -rp "$(echo -e "${BLUE}ℹ${NC}  Also copy templates, examples, and docs? (y/N) ")" copy_extras < /dev/tty
 if [[ "$copy_extras" =~ ^[Yy]$ ]]; then
     mkdir -p "$TARGET_DIR/ai-pilot-resources"
-    cp -r "$TEMP_DIR/ai-pilot/templates" "$TARGET_DIR/ai-pilot-resources/" 2>/dev/null || true
-    cp -r "$TEMP_DIR/ai-pilot/examples"  "$TARGET_DIR/ai-pilot-resources/" 2>/dev/null || true
-    cp -r "$TEMP_DIR/ai-pilot/docs"      "$TARGET_DIR/ai-pilot-resources/" 2>/dev/null || true
+    cp -r "$TEMP_DIR/multi-agent-coding/templates" "$TARGET_DIR/ai-pilot-resources/" 2>/dev/null || true
+    cp -r "$TEMP_DIR/multi-agent-coding/examples"  "$TARGET_DIR/ai-pilot-resources/" 2>/dev/null || true
+    cp -r "$TEMP_DIR/multi-agent-coding/docs"      "$TARGET_DIR/ai-pilot-resources/" 2>/dev/null || true
     success "Copied resources to ai-pilot-resources/"
 fi
 
@@ -137,12 +137,12 @@ fi
 # ─────────────────────────────────────────────
 echo ""
 echo -e "${GREEN}${BOLD}╔══════════════════════════════════════╗${NC}"
-echo -e "${GREEN}${BOLD}║       🎉 AI Pilot installed!         ║${NC}"
+echo -e "${GREEN}${BOLD}║       🎉 Multi-Agent Coding installed!         ║${NC}"
 echo -e "${GREEN}${BOLD}╚══════════════════════════════════════╝${NC}"
 echo ""
 echo -e "  ${BOLD}Next steps:${NC}"
 echo -e "  1. Open your project in VS Code with Antigravity"
 echo -e "  2. Tell it: ${CYAN}\"Fix the login bug — delegate to Claude Code\"${NC}"
 echo -e ""
-echo -e "  📖 Docs:  ${CYAN}https://github.com/manhpd98/ai-pilot${NC}"
+echo -e "  📖 Docs:  ${CYAN}https://github.com/manhpd98/multi-agent-coding${NC}"
 echo ""

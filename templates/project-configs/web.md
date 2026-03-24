@@ -1,6 +1,6 @@
 # Web / React / Next.js Configuration
 
-Platform-specific settings for AI Pilot when working with web projects.
+Platform-specific settings for Multi-Agent Coding when working with web projects.
 
 ## Build & Test Commands
 

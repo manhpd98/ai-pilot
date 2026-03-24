@@ -28,7 +28,7 @@ What actually happened.
 - **OS**: [e.g., macOS 14, Ubuntu 22.04]
 - **Pilot**: [e.g., Antigravity, Cursor, Cline]
 - **Worker**: [e.g., Claude Code, OpenCode, Aider]
-- **AI Pilot version**: [e.g., 1.0.0]
+- **Multi-Agent Coding version**: [e.g., 2.0.0]
 
 ## Additional Context
 

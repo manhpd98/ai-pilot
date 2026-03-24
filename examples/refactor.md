@@ -1,6 +1,6 @@
 # Example: Refactor Code
 
-A complete walkthrough of using AI Pilot to refactor a massive ViewController into MVVM, with actual code diffs and metrics.
+A complete walkthrough of using Multi-Agent Coding to refactor a massive ViewController into MVVM, with actual code diffs and metrics.
 
 ## Scenario
 

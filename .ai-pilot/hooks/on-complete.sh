@@ -72,7 +72,7 @@ run_checks() {
 
 # Main
 echo ""
-echo "🔄 AI Pilot — Auto-verification"
+echo "🔄 Multi-Agent Coding — Auto-verification"
 echo "================================"
 echo ""
 

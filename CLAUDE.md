@@ -1,4 +1,4 @@
-# AI Pilot Protocol
+# Multi-Agent Coding Protocol
 
 > This file is automatically read by Claude Code. Do NOT delete or rename it.
 

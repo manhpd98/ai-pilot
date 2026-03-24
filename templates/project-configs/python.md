@@ -1,6 +1,6 @@
 # Python / FastAPI / Django Configuration
 
-Platform-specific settings for AI Pilot when working with Python projects.
+Platform-specific settings for Multi-Agent Coding when working with Python projects.
 
 ## Build & Test Commands
 

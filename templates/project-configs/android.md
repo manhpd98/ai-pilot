@@ -1,6 +1,6 @@
 # Android / Kotlin / Gradle Configuration
 
-Platform-specific settings for AI Pilot when working with Android projects.
+Platform-specific settings for Multi-Agent Coding when working with Android projects.
 
 ## Build & Test Commands
 

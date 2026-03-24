@@ -1,6 +1,6 @@
 # iOS / Swift / Xcode Configuration
 
-Platform-specific settings for AI Pilot when working with iOS projects.
+Platform-specific settings for Multi-Agent Coding when working with iOS projects.
 
 ## Build & Test Commands
 

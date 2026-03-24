@@ -1,6 +1,6 @@
 # Supported AI Workers
 
-All AI coding tools that can be used as the "Coder" in AI Pilot.
+All AI coding tools that can be used as the "Coder" in Multi-Agent Coding.
 
 ## Officially Supported
 

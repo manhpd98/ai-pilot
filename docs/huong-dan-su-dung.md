@@ -1,4 +1,4 @@
-# 🇻🇳 Hướng Dẫn Sử Dụng AI Pilot
+# 🇻🇳 Hướng Dẫn Sử Dụng Multi-Agent Coding
 
 > **Antigravity** quản lý, lên kế hoạch, kiểm tra — **Claude Code** viết code.
 
