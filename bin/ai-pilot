@@ -81,6 +81,7 @@ cmd_help() {
     echo -e "  ${GREEN}log${NC}                             View recent delegation sessions"
     echo -e "  ${GREEN}update${NC}                          Update .agent/ from GitHub"
     echo -e "  ${GREEN}uninstall${NC}                       Remove .agent/ from project"
+    echo -e "  ${GREEN}heal${NC} <worker> \"<task>\"          Delegate with auto-retry on test failure"
     echo -e "  ${GREEN}help${NC}                            Show this help message"
     echo -e "  ${GREEN}version${NC}                         Show version"
     echo ""
@@ -622,6 +623,51 @@ cmd_update() {
     success "Updated .agent/ to latest version."
 }
 
+cmd_heal() {
+    ensure_project
+
+    if [ $# -lt 2 ]; then
+        error 'Usage: ai-pilot heal <worker> "<task>"'
+        echo ''
+        echo -e "  Example: ai-pilot heal claude \"Fix auth module\""
+        echo -e "  This will auto-retry up to 3 times if tests fail."
+        exit 1
+    fi
+
+    local worker="$1"
+    local task="$2"
+
+    # First create the task file (reuse cmd_task logic to generate YAML)
+    # Then run self-heal
+    local task_id="task-$(date +%s)"
+
+    # Generate YAML (copy the YAML generation from cmd_task)
+    mkdir -p .ai-pilot/tasks .ai-pilot/results
+
+    local task_type='feature'
+    case "$task" in
+        *fix*|*bug*|*crash*|*error*) task_type='bug-fix' ;;
+        *refactor*) task_type='refactor' ;;
+        *test*) task_type='test' ;;
+        *review*) task_type='review' ;;
+    esac
+
+    cat > ".ai-pilot/tasks/${task_id}.yaml" <<EOF
+id: ${task_id}
+type: ${task_type}
+description: "${task}"
+constraints:
+  - Don't change unrelated files
+  - Follow existing code patterns
+  - Keep tests passing
+EOF
+
+    info "Created task: $task_id"
+
+    # Run self-healing loop
+    .ai-pilot/hooks/self-heal.sh "$worker" "$task_id"
+}
+
 cmd_uninstall() {
     echo ""
     echo -e "${BOLD}🗑  Multi-Agent Coding — Uninstall${NC}"
@@ -669,6 +715,7 @@ case "$COMMAND" in
     delegate)   cmd_delegate "$@" ;;
     task)       cmd_task "$@" ;;
     review)     cmd_review "$@" ;;
+    heal)       cmd_heal "$@" ;;
     status)     cmd_status "$@" ;;
     log|logs)   cmd_log "$@" ;;
     update)     cmd_update "$@" ;;

@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0",
+  "current_task": null,
+  "last_updated": null,
+  "session": {
+    "id": null,
+    "started_at": null,
+    "tasks_completed": 0,
+    "tasks_failed": 0
+  },
+  "history": []
+}

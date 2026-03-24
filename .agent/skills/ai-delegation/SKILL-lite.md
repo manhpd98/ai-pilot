@@ -63,3 +63,15 @@ Read `.ai-pilot/results/task-001.json` → decide:
 4. For 🟡/🔴 mode: use full protocol (YAML → JSON)
 5. Never review files for 🟢 mode → trust worker
 6. Always review for 🔴 mode
+7. For tasks with tests → use `ai-pilot heal` (auto-retry up to 3x on failure)
+
+## Self-Healing Mode
+
+For tasks where tests exist, use healing mode instead of regular task:
+
+```bash
+ai-pilot heal claude "Fix auth module"
+```
+
+Flow: code → test → fail → summarize error → create fix task → retry (max 3)
+State tracked in `.ai-pilot/state.json`. Antigravity only reads final result.
